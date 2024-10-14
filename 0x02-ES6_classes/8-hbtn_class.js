@@ -9,27 +9,27 @@ export default class HolbertonClass {
     }
 
     // Assigning to underscore attributes
-    this._size = size;
-    this._location = location;
+    this.size = size;
+    this.location = location;
   }
 
   // Getter for size
   get size() {
-    return this._size;
+    return this.size;
   }
 
   // Getter for location
   get location() {
-    return this._location;
+    return this.location;
   }
 
   // Implementing valueOf to cast the object to a number (returns size)
   valueOf() {
-    return this._size;
+    return this.size;
   }
 
   // Implementing toString to cast the object to a string (returns location)
   toString() {
-    return this._location;
+    return this.location;
   }
 }

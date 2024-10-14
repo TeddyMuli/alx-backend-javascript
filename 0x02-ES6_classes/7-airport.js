@@ -9,22 +9,22 @@ export default class Airport {
     }
 
     // Assigning to underscore attributes
-    this._name = name;
-    this._code = code;
+    this.name = name;
+    this.code = code;
   }
 
   // Getter for name
   get name() {
-    return this._name;
+    return this.name;
   }
 
   // Getter for code
   get code() {
-    return this._code;
+    return this.code;
   }
 
   // Override the default toString method to return the airport code
   toString() {
-    return this._code;
+    return this.code;
   }
 }

@@ -9,17 +9,18 @@ export default class Currency {
     }
 
     // Assigning to underscore attributes
-    this._code = code;
-    this._name = name;
+    this.code = code;
+    this.name = name;
   }
 
   // Getter and setter for code
   get code() {
-    return this._code;
+    return this.code;
   }
 
   set code(value) {
-    if (typeof value !== 'string') {
+    this.code = value;
+    if (typeof this.code !== 'string') {
       throw new TypeError('Code must be a string');
     }
   }
