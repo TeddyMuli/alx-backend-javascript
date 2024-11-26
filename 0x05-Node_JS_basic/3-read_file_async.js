@@ -1,21 +1,21 @@
 const fs = require('fs/promises');
 
-function countStudents(path) {
+async function countStudents(path) {
   return fs
     .readFile(path, 'utf-8')
     .then((data) => {
       const lines = data.trim().split('\n');
 
       if (lines.length <= 1) {
-        console.log('Number of students: 0');
-        return;
+        return 'Number of students: 0';
       }
 
       const headers = lines[0].split(',');
       const rows = lines.slice(1).filter((line) => line.trim() !== '');
 
       const numberOfStudents = rows.length;
-      console.log(`Number of students: ${numberOfStudents}`);
+      console.log(`Number of students: ${numberOfStudents}`)
+      let result = `Number of students: ${numberOfStudents}\n`;
 
       const studentData = {};
       rows.forEach((row) => {
@@ -34,10 +34,11 @@ function countStudents(path) {
 
       Object.keys(studentData).forEach((field) => {
         const students = studentData[field];
-        console.log(
-          `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`
-        );
+        console.log(`Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`);
+        result += `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}\n`;
       });
+
+      return result;
     })
     .catch(() => {
       throw new Error('Cannot load the database');
