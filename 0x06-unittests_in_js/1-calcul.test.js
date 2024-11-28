@@ -12,6 +12,6 @@ describe('check calculate function with different types of calculations', () => 
     assert.strictEqual(calculateNumber('DIVIDE', 1.49, 2.49), 0.5);
   });
   it('should divide the rounded numbers corrcetly', () => {
-    assert.throws(() => calculateNumber('DIVIDE', 1.49, 0.49), /Cannot divide by zero/);
+    assert.strictEqual(calculateNumber('DIVIDE', 1.49, 0.49), 'Error');
   });
 });
