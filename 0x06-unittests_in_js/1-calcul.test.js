@@ -1,5 +1,5 @@
 const assert = require('assert');
-const calculateNumber = require('./1-calcul')
+const calculateNumber = require('./1-calcul');
 
 describe('check calculate function with different types of calculations', () => {
   it('should add the rounded numbers corrcetly', () => {
@@ -10,5 +10,5 @@ describe('check calculate function with different types of calculations', () => 
   })
   it('should divide the rounded numbers corrcetly', () => {
     assert.strictEqual(calculateNumber('DIVIDE', 1.49, 2.49), 0.5);
-  })
-})
+  });
+});
