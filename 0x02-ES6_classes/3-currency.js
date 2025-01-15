@@ -7,17 +7,17 @@ export default class Currency {
       throw new TypeError('Name must be a string');
     }
 
-    this.code = code;
-    this.name = name;
+    this._code = code;
+    this._name = name;
   }
 
   get code() {
-    return this.code;
+    return this._code;
   }
 
   set code(value) {
-    this.code = value;
-    if (typeof this.code !== 'string') {
+    this._code = value;
+    if (typeof this._code !== 'string') {
       throw new TypeError('Code must be a string');
     }
   }
